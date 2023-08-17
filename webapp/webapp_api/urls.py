@@ -1,12 +1,13 @@
 from django.urls import path
 
-from webapp_api.views import echo_view_add, echo_view_subtract, echo_view_multiply, echo_view_divide
+from webapp_api.views import view_add, view_subtract, view_multiply, view_divide, index
 
 app_name = "webapp_api"
 
 urlpatterns = [
-    path("echo/add/", echo_view_add, name="echo_view_add"),
-    path("echo/subtract/", echo_view_subtract, name="echo_view_subtract"),
-    path("echo/multiply/", echo_view_multiply, name="echo_view_multiply"),
-    path("echo/divide/", echo_view_divide, name="echo_view_divide"),
+    path("", index, name="index"),
+    path("api_v1/add/", view_add, name="view_add"),
+    path("api_v1/subtract/", view_subtract, name="view_subtract"),
+    path("api_v1/multiply/", view_multiply, name="view_multiply"),
+    path("api_v1/divide/", view_divide, name="view_divide"),
 ]
